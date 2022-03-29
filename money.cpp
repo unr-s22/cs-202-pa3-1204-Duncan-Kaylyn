@@ -1,30 +1,23 @@
 #include "money.h"
 
 Money Money::operator + (const Money rhs){
-    int d = dollars + rhs.dollars;
-    int c = cents + rhs.cents;
+    int d = dollars_ + rhs.dollars_;
+    int c = cents_ + rhs.cents_;
     if(c > 99){
         d += 1;
         c -= 100;
     }
-    return Money(d, c);
+    return Money(d,c);
 }
 
 Money Money::operator - (const Money rhs){
-    int d = dollars - rhs.dollars;
-    int c = cents - rhs.cents;
-    if(d = 0 && c < 0){
-        d = 0;
-        c = 0 - cents;
-    }
-    else if(d != 0 && c < 0){
-        d -= 1;
-        c += 100;
-    }
-
-    if(c < 0 || d < 0){
-        c *= c;
-        std::cout << "-";
-    }
-    return Money(d, c);
+    int n1 = dollars_*100+cents_;
+    int n2 = rhs.dollars_*100+rhs.cents_;
+    int n3 = n1 - n2;
+    int d = n3/100;
+    int c = n3%100;
+    sign_=d<0?1:0;
+    c=c<0?c*(-1):c*1;
+    d=d<0?d*(-1):d*1;
+    return (Money(d,c));
 }
