@@ -21,3 +21,8 @@ Money Money::operator - (const Money rhs){
     d=d<0?d*(-1):d*1;
     return (Money(d,c));
 }
+
+std::ostream& operator << (std::ostream& outputStream, const Money& money) {
+    outputStream << (!money.sign_?"":"-") << "$" << money.dollars_ << "." << money.cents_ << std::endl;
+    return(outputStream);
+}

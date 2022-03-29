@@ -10,12 +10,10 @@ private:
 public:
     Money operator + (const Money rhs);
     Money operator - (const Money rhs);
+    friend std::ostream& operator << (std::ostream& out, const Money& money);
     Money(int newDollars, int newCents){
         dollars_ = newDollars;
         cents_ = newCents;
-    }
-    void print() {
-        std::cout << dollars_ << "." << cents_ << std::endl;
     }
 };
 
