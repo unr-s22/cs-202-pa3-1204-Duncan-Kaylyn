@@ -20,7 +20,7 @@ int main ()
     Money money2(300, 24);
     Money money3(501, 22);
     Money money4(300, 10);
-    Money money5(1101, 34);
+    Money money5(201, 34);
 
     Account bankofthewest(money0);
     std::cout << bankofthewest;
