@@ -6,7 +6,7 @@
 /*   By: liamprior <liamprior@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/27 13:14:42 by liamprior         #+#    #+#             */
-/*   Updated: 2022/03/30 20:58:44 by liamprior        ###   ########.fr       */
+/*   Updated: 2022/03/30 21:21:30 by liamprior        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,17 @@ Money Account::getBal(void) {//test
 std::ostream& operator << (std::ostream& outputStream2, Account& account) {
     int i = 0;
     outputStream2 << "Account Details\n--------------------------\nCurrent Balance:";
-    outputStream2 << account.getBal() << std::endl;
+    outputStream2 << account.getBal();
     outputStream2 << "--------------------------\nNumber of Deposits: ";
     outputStream2 << account.index_D << std::endl;
     outputStream2 << "--------------------" << std::endl;
     for (int it = 0; it < account.deposites_.size(); it++)
-        outputStream2 << "(" << it+1 << ")" << " " << account.deposites_[it] << std::endl;
+        outputStream2 <<"(" << it+1 << ")" << " " << account.deposites_[it];
     outputStream2 << "--------------------------" << std::endl;
     outputStream2 << "Number of Withdrawals: " << account.index_W << std::endl;
     outputStream2 << "--------------------------" << std::endl;
     for (int it = 0; it < account.withdrawals_.size(); it++)
-        outputStream2 << "(" << it+1 << ")" << " " << account.withdrawals_[it] << std::endl;
+        outputStream2 << "(" << it+1 << ")" << " " << account.withdrawals_[it];
+    outputStream2 << std::endl;
     return(outputStream2);
 }

@@ -16,9 +16,7 @@ Money Money::operator - (const Money rhs){
     int n3 = n1 - n2;
     int d = n3/100;
     int c = n3%100;
-    // sign_=d<0?1:0;
     c=c<0?c*(-1):c*1;
-    // d=d<0?d*(-1):d*1;
     return (Money(d,c));
 }
 

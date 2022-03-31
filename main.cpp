@@ -6,7 +6,7 @@
 /*   By: liamprior <liamprior@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 11:53:58 by liamprior         #+#    #+#             */
-/*   Updated: 2022/03/30 21:07:45 by liamprior        ###   ########.fr       */
+/*   Updated: 2022/03/30 21:12:09 by liamprior        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main ()
     Money money2(300, 24);
     Money money3(501, 22);
     Money money4(300, 10);
-    Money money5(201, 34);
+    Money money5(1101, 34);
 
     Account bankofthewest(money0);
     std::cout << bankofthewest;
