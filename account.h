@@ -6,7 +6,7 @@
 /*   By: liamprior <liamprior@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/27 13:14:45 by liamprior         #+#    #+#             */
-/*   Updated: 2022/03/27 14:20:51 by liamprior        ###   ########.fr       */
+/*   Updated: 2022/03/30 19:13:03 by liamprior        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,19 @@
 
 class Account : public Money {
     public:
-        Account(Money);
+        Account(Money money) {
+            total_ = money;
+        }
         void makeDeposit(Money);
         void makeWithdrawals(Money);
+        Money getBal(void);
+        friend std::ostream& operator << (std::ostream&, Account&);
     private:
-        bool updated;
-        std::vector<Money> list;
+        Money total_;
+        int index_W = 0, index_D = 0;
+        bool updatePlease_;
+        std::vector<Money> deposites_;
+        std::vector<Money> withdrawals_;
 };
 
 #endif
